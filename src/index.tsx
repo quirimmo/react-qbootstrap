@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import history from './main-history';
 import reducers from './reducers';
 import AppContainer from './app/app.container';
+import HTTPProxyService from './services/http-proxy.service';
 
 // to supply the missing of __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__() properties
 // for not having a static type error
@@ -26,3 +27,7 @@ const MainApp = ReactDOM.render(
 );
 
 export default MainApp;
+
+HTTPProxyService.get('https://jsonplaceholder.typicode.com/todos/1')
+	.then((resp: any) => console.log('RESP', resp))
+	.catch((err: any) => console.error('ERROR', err));
