@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
-import AppContainer from './app.container';
+import HomeContainer from './home.container';
 import thunk from 'redux-thunk';
 
 const middlewares = [thunk];
@@ -9,9 +9,9 @@ const mockStore = configureMockStore(middlewares);
 const store = mockStore({});
 let component: any;
 
-describe('App Container Component', () => {
+describe('Home Container Component', () => {
 	beforeEach(() => {
-		component = shallow(<AppContainer store={store} />);
+		component = shallow(<HomeContainer store={store} />);
 	});
 
 	it('should define the component', () => {
