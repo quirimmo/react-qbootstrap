@@ -7,9 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, './dist');
 const SRC_DIR = path.resolve(__dirname, './src');
-const APP_DIR = path.resolve(__dirname, './src/app');
 const TSLINT_CONFIG = require('./tslint.json');
-// const SUBDOMAIN_PATH = '/react-cucumber-charts';
 
 const config = {
 	mode: 'development',
@@ -25,7 +23,6 @@ const config = {
 		}),
 		new ExtractTextPlugin('styles.css'),
 		new CopyWebpackPlugin([{ from: './assets/images/**/*', to: 'images/', flatten: true }])
-		// new CopyWebpackPlugin([{ from: './src/models/data/**/*', to: 'data/', flatten: true }])
 	],
 	output: {
 		path: BUILD_DIR,
