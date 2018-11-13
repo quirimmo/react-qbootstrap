@@ -39,14 +39,22 @@
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "jest-css-modules-transform": "^2.1.1",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
+    "scheduler": "^0.11.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^16.6.3"
+  }
 }
