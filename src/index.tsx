@@ -27,7 +27,3 @@ const MainApp = ReactDOM.render(
 );
 
 export default MainApp;
-
-HTTPProxyService.get('https://jsonplaceholder.typicode.com/todos/1')
-	.then((resp: any) => console.log('RESP', resp))
-	.catch((err: any) => console.error('ERROR', err));
