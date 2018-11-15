@@ -9,6 +9,9 @@ import { withRouter } from 'react-router';
  * The router components are responsible for accessing any info related to the routing,
  * and then pass them to the real component displayed in the page.
  * Do not provide any additional info or rendering here. Do that in the Home Component instead.
+ * @export
+ * @class HomeRouter
+ * @extends {React.Component<any, any>}
  */
 export class HomeRouter extends React.Component<any, any> {
 	constructor(props: any) {

@@ -1,8 +1,10 @@
 import axios, { AxiosStatic, AxiosRequestConfig, AxiosPromise } from 'axios';
+
 /**
  * Static class used for interfacing with your api.
  * It is a really generic class which provides few methods already implemented, like GET, PUT, POST and DELETE.
  * It uses axios in order to perform the HTTP requests, but you are free to change it with your favourite one.
+ * @class HTTPProxyService
  */
 class HTTPProxyService {
 	/**
