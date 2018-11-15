@@ -5,7 +5,6 @@ import { withRouter } from 'react-router';
 export class HomeRouter extends React.Component<any, any> {
 	constructor(props: any) {
 		super(props);
-		console.log('home route component props:', this.props);
 	}
 
 	public render() {
