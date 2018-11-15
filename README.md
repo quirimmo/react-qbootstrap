@@ -30,31 +30,30 @@ The following features are working in the project, and ready to be used if you w
 - **styling**: SASS and CSS are already supported by the project. It's available also the _bootstrap_ library everywhere in your components.
 - **timing**: For managing times and dates, the _moment_ library is already included in the project and it is ready to be used.
 - **reactstrap**: The React implementation of bootstrap components. You can find several useful components, even for the layout. Feel free to remove it if you don't want to use this library at all.
+- **versionng**: If you are using _git_, the `.gitignore` file is already set up in the project. If you want to use another versioning tool, feel free to remove this file.
 
 ## Structure
 
-The code of the app is available inside the `src` subfolder. All the code of the application is inside this folder.
+An brief explanation of the structure and the folders of the application.
 
-The `index.tsx` file bootstraps the application and the redux store.
-
-
-
-- 
-- As per redux pattern, you can definepresentationals and containers with proper extension
-- routers
-- tests with spec in the same folder, enzyme and test folder for setup features, mock styles etc
-- services
-- store
-- main app component which includes styles of bootstrap and of main app
-- assets with images and global styles css and sass
-- other components
-- reducers, actions and store
+- **architecture**: Instead of grouping for categories (actions, reducers, components, etc...), the group is made by concepts/modules. Grouping by categories works fine if the project is not a wide project, otherwise it shows few lacks, because for understanding some blocks of your application, you may finish to open a lot of different folders and subfolders of your application. In addition, with that approach, if you want to reuse some logic of your application, you have to copy single files from different folders. On the other hand, grouping by concepts, you can make the application more ordered, because a single folder contains already all the files needed by that concept. At the same time, If in the future you want to reuse some module in another application, you can simply copy the folder. Actions, reducers, containers and presentationals, should be all defined inside the folder which groups them. An example can be the _app_ folder or the _home_ folder. It includes also the definition of all the routes of the application.
+- **app**: The main app presentational and container components, with the fake reducer associated at the beginning to the application. The app presentational component includes also the global _sass_ file of the application, located in `assets`, and the _css_ of the _bootstrap_ library.
+- **redux**: As per redux pattern, define your presentational and container components (also known as smart and dumb components), and your actions and reducers. The convention used in the project is to use the `.presentational` suffix for presentational/dumb components, `.container` suffix for container/smart components, `.actions` suffix for the actions and `.reducers` suffix for the reducers.
+- **routers**: The application routing is defined inside the `routes` subfolder. There is an `app.routes.tsx` component which defines all the routes implemented in the application, and the redirect rules. Every route is associated to what I like to call "Router Components", which are actually presentational components associated to a route, and they are responsible for accessing the navigation parameters (if provided), and then pass them to the container/presentational component used in that route. In this way the logic of the navigation is kept seprated by the logic of the components which display the data in that particular route (page). The convention used here is to use `.router` as suffix for these components.
+- **tests**: The tests are defined in the same folder where the file to be tested is located. This keeps the test closer to the "source file", and they are prefixed with `.spec`. The _jest_ configuration is located in the `jest.config.js` file in the root folder. The folder `test` provides the preprocessor for typescript, the mock for the styles, the incluson of _enzyme_ and its adapter for react, and the mock for the animations.
+- **services**: All the applications execute general tasks in order to achieve their goals. These tasks are usually provided by what I like to call "services". A good example could be the interfacing with an api, or with a socket for example. The `services` folder keeps all these services, which usually are reusable generic code, shared by applications.
+- **store**: The `store` folder contains the global store of the application and the list of all the reducers defined by the app and provided to the store when creating the app.
+- **assets**: General styles and general images used by the application.
 
 ## Instructions
 
-1. package.json url, homepage, repository, name, author, description, bugs
-2. index.html title
-3. add git or your svn. If using git, the .gitignore is ready to be used with the current structure. If you are not using git, simply delete the .gitignore file
-4. add reducers and then remove fake ones and update store
-5. add routes and then remove home fake ones
-6. add components and remove home fake ones
+After generated the project with the generator, follow the next instructions for removing useless/fake code provided for example purposes:
+
+1. Change the title of your application inside the `index.html` file.
+2. Change the `package.json` file adding your homepage, repository, name, author, and all the other properties you want to setup.
+3. If you don't want to use git or to version the project, remove the `.gitignore` file in the root folder.
+4. Add the `README.md` file to your project if you want to provide the documentation of your project.
+5. After adding your first reducer, remove the sample `app.reducer.ts` file from the `app` subfolder and its inclusion inside the `reducers.ts` file in the `store` folder.
+6. After defining your store, delete the property `title` from the store, which was created as example.
+7. Remove the sample home route if you don't want to use it.
+8. Remove the home folder if you don't need to have a main home component.
