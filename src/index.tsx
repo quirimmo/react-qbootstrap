@@ -4,8 +4,8 @@ import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import history from './main-history';
-import reducers from './reducers';
+import history from './routes/main-history';
+import reducers from './store/reducers';
 import AppContainer from './app/app.container';
 import HTTPProxyService from './services/http-proxy.service';
 

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import title from './app/app.reducer';
+import title from '../app/app.reducer';
 
 /**
  * All the reducers of your application.
