@@ -1,3 +1,6 @@
+/**
+ * Home Container component which is rendered by the Home Route Component when displaying the Home Route
+ */
 import { connect } from 'react-redux';
 import Home from './home.presentational';
 
