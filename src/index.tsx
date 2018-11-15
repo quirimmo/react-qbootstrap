@@ -12,9 +12,9 @@ import HTTPProxyService from './services/http-proxy.service';
 // to supply the missing of __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__() properties
 // for not having a static type error
 declare var window: any;
-
+// Adding the redux devtools extension. Feel free to remove it if you don't want to use this extension.
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
+// Creating the main store of the app, adding as middlewares thunk and the redux dev tools extension
 const store = createStore(reducers, composeEnhancer(applyMiddleware(thunk)));
 
 const MainApp = ReactDOM.render(
